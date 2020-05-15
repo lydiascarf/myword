@@ -1,6 +1,6 @@
 const Dynamo = require('../common/Dynamo');
 const Responses = require('../common/API_Responses');
-const WebSocket = require('../common/WebSocketMessage');
+const WebSocket = require('../common/WebSocket');
 
 const tableName = process.env.tableName;
 
@@ -9,13 +9,13 @@ exports.handler = async event => {
 
   const { connectionId } = event.requestContext;
 
-  const body = JSON.parse(event.body);
+  const { message } = JSON.parse(event.body);
 
   try {
     const record = await Dynamo.get(connectionId, tableName);
     const { domainName, messages, stage } = record;
 
-    messages.push(body.message);
+    messages.push(message);
 
     const data = {
       ...record,
@@ -24,10 +24,10 @@ exports.handler = async event => {
 
     await Dynamo.write(data, tableName);
 
-    await WebSocket.send({
+    await WebSocket.sendMessage({
       connectionId,
       domainName,
-      message: "This is a reply to your message",
+      message,
       stage,
     })
 
