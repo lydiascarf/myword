@@ -13,10 +13,10 @@ exports.handler = async event => {
         ID: connectionId,
         messages: [],
         stage,
-    }
+    };
 
     await Dynamo.write(data, tableName);
 
 
-    return Responses._200({ message: 'connected' })
-}
+    return Responses._200({ message: 'connected' });
+};

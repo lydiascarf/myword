@@ -7,14 +7,14 @@ import Header from './Header';
 import TurnTable from '../TurnTable';
 
 function MyBoard({ N }) {
-  return (
-    <Container>
-      <Table striped bordered hover size="sm">
-        <Header N={N} />
-        <Body N={N} />
-      </Table>
-    </Container>
-  );
+    return (
+        <Container>
+            <Table striped bordered hover size="sm">
+                <Header N={N} />
+                <Body N={N} />
+            </Table>
+        </Container>
+    );
 }
 
 export default MyBoard;

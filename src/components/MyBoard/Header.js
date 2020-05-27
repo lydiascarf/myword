@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header({ N }) {
-    const array = [...Array(N).keys()].map(num => num + 1)
+    const array = [...Array(N).keys()].map(num => num + 1);
     return (
         <thead>
             <tr>
