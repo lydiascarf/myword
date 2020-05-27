@@ -37,7 +37,9 @@ MyWord is my new favorite word game. It can be played in person, over the phone,
 * after 11 turns, emit winner, final scores, and goal words
 
 Int N: length of goal word (in characters)
+
 Int n: length of current turn's guesses (in characters)
+
 Int p: 0-based offset for guess' position (in characters)
 
 | turn |  n  | n if N=6 | p |
@@ -97,6 +99,25 @@ why? https://winterwindsoftware.com/serverless-newbies-should-use-framework/
 * out-of-the-box scalability
 * I don't know AWS good
 
+#### Stuff Copied From `amplify init` output
+
+```
+"amplify status" will show you what you've added already and if it's locally configured or deployed
+"amplify add <category>" will allow you to add features like user login or a backend API
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify console" to open the Amplify Console and view your project status
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
+Pro tip:
+Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
+```
+
 ## Contributors
 
-@jacobscarfmerrell - Jacob Scarf Merrell
+- [Nancy Alter](https://github.com/ngalter)
+
+- [Lorenzo Evans](https://github.com/LorenzoEvans)
+
+- [Brittany Morris](https://github.com/brittanymorrisdesign)
+
+- [Jacob Scarf Merrell](https://github.com/jacobscarfmerrell)
