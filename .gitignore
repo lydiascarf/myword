@@ -11,6 +11,7 @@ jspm_packages
 amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/mock-data
+amplify/team-provider-info.json
 amplify/backend/amplify-meta.json
 amplify/backend/awscloudformation
 build/
