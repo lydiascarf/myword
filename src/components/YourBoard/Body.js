@@ -5,8 +5,8 @@ import { getTurnValues } from '../../utilities';
 const T = 11;
 
 function Body({ N }) {
-    const N_array = [...Array(N).keys()].map(num => num + 1)
-    const T_array = [...Array(T).keys()].map(num => num + 1)
+    const N_array = [...Array(N).keys()].map(num => num + 1);
+    const T_array = [...Array(T).keys()].map(num => num + 1);
 
     return (
         <tbody>

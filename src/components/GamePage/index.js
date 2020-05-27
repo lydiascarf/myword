@@ -33,23 +33,23 @@ function GamePage({ location }) {
         setRoom(room);
 
         socket.emit('join', { name, room }, (message) => {
-            setMessages(messages => [...messages, message])
+            setMessages(messages => [...messages, message]);
         });
 
         return () => {
             socket.emit('disconnect');
             socket.off();
-        }
+        };
     }, [ENDPOINT, location.search]);
 
 
     useEffect(() => {
         socket.on('message', (message) => {
-            setMessages(messages => [...messages, message])
+            setMessages(messages => [...messages, message]);
         });
         socket.on('guess', (guess) => {
             setYourGuesses(ygs => [...ygs, guess]);
-        })
+        });
 
     }, [goal]);
 
@@ -58,21 +58,21 @@ function GamePage({ location }) {
         e.preventDefault();
         if (guess && Math.abs(myGuesses.length - yourGuesses.length) <= 1) {
             socket.emit('guess', guess, (score) => {
-                console.log(guess)
+                console.log(guess);
                 const newGuess = { guess, score };
                 setMyGuesses(myGuesses => [...myGuesses, newGuess], () => {
-                    setGuess('')
-                    console.log(myGuesses)
+                    setGuess('');
+                    console.log(myGuesses);
                 });
-            })
+            });
         } else if (guess) {
-            console.error('ERROR: STAY IN SYNC')
-            setGuess('')
+            console.error('ERROR: STAY IN SYNC');
+            setGuess('');
         } else {
-            console.error('ERROR: NO GUESS')
-            setGuess('')
+            console.error('ERROR: NO GUESS');
+            setGuess('');
         }
-    }
+    };
 
     return (
         <Container>

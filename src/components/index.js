@@ -4,4 +4,4 @@ import JoinPage from './JoinPage';
 export {
     GamePage,
     JoinPage,
-}
+};
