@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-image: url("../../assets/myWord_Background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 1px; 
+}
+
+.card {
+  width: 780px;
+  margin: auto;
+  margin-top: 23px;
+  text-align: center;
+  border-radius: 25px !important;
+}
+
+.cardHeader {
+  background-color:#74aec1 !important;
+  margin-top: 90px;
+  text-align: center;
+  border-radius: 25px !important;
+}
+
+.card-header {
+  background-color: #c8a885 !important;
+  color: white;
+  font-weight: 600;
+  font-size: x-large;
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
+  border-color:#c8a885 !important;
+  border-width: thick;
+}
+
+.logo {
+  width: 340px;
+  height: 129;
+}
+
+.card-text {
+  padding-top: 10px;
+  font-size: large;
+  font-weight: 400;
+  color: #242222;
+}

@@ -5,6 +5,23 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+const styles = {
+    joinButton: {
+        marginTop: '30px',
+        backgroundColor: '#c8a885',
+        border: 'none', 
+        color: '#242222', 
+        borderRadius: '100px',
+        display: 'inline-block',
+        width: '200px',
+        display: 'inline', 
+        float: 'right',
+        marginRight: '140px',
+        padding: '12px',
+        fontWeight: '500'
+    }
+};
+
 function JoinButton({ name, room, setRoom }) {
     const [show, setShow] = useState(false);
 
@@ -13,7 +30,7 @@ function JoinButton({ name, room, setRoom }) {
 
     return (
         <>
-            <Button variant="secondary" size="lg" block onClick={handleShow}>
+            <Button variant="secondary" style={styles.joinButton} size="lg" block onClick={handleShow}>
                 Join
             </Button>
             <Modal show={show} onHide={handleClose}>
