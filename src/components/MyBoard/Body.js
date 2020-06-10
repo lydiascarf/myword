@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { getTurnValues } from '../../utilities';
 
@@ -29,5 +30,9 @@ function Body({ N }) {
         </tbody>
     );
 }
+
+Body.propTypes = {
+    N: PropTypes.number.isRequired,
+};
 
 export default Body;

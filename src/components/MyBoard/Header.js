@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Header({ N }) {
     const array = [...Array(N).keys()].map(num => num + 1);
@@ -11,5 +12,9 @@ function Header({ N }) {
         </thead>
     );
 }
+
+Header.propTypes = {
+    N: PropTypes.number.isRequired,
+};
 
 export default Header;

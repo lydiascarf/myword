@@ -30,3 +30,5 @@ function getTurnValues({ t, N }) {
         default: throw new Error('Invalid turn');
     }
 }
+
+export { getScore, getTurnValues };

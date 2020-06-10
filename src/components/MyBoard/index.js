@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
 import Body from './Body';
 import Header from './Header';
-import TurnTable from '../TurnTable';
 
 function MyBoard({ N }) {
     return (
@@ -16,5 +16,9 @@ function MyBoard({ N }) {
         </Container>
     );
 }
+
+MyBoard.propTypes = {
+    N: PropTypes.number.isRequired,
+};
 
 export default MyBoard;

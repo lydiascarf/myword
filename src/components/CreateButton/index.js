@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
@@ -16,5 +17,9 @@ function CreateButton({ name }) {
         </Link>
     );
 }
+
+CreateButton.propTypes = {
+    name: PropTypes.string.isRequired,
+};
 
 export default CreateButton;

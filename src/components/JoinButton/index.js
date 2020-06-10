@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function JoinButton({ name, room, setRoom }) {
     const [show, setShow] = useState(false);
@@ -34,5 +35,11 @@ function JoinButton({ name, room, setRoom }) {
         </>
     );
 }
+
+JoinButton.propTypes = {
+    name: PropTypes.string.isRequired,
+    room: PropTypes.string.isRequired,
+    setRoom: PropTypes.func.isRequired,
+};
 
 export default JoinButton;
