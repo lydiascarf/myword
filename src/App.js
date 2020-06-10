@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { GamePage, JoinPage } from './components';
 
+import './App.css';
+
 function App() {
     return (
         <Router>
