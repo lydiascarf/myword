@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
@@ -18,7 +20,7 @@ function GamePage({ location }) {
     const [lastGame, setLastGame] = useState(null);
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
-    const [goal, setGoal] = useState('oceans');
+    const [goal, setGoal] = useState('OCEANS');
     const [guess, setGuess] = useState('');
     const [myGuesses, setMyGuesses] = useState([]);
     const [yourGuesses, setYourGuesses] = useState([]);
@@ -26,31 +28,11 @@ function GamePage({ location }) {
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
-        socket = io(ENDPOINT);
 
         setName(name);
         setRoom(room);
 
-        socket.emit('join', { name, room }, (message) => {
-            setMessages(messages => [...messages, message]);
-        });
-
-        return () => {
-            socket.emit('disconnect');
-            socket.off();
-        };
     }, [ENDPOINT, location.search]);
-
-
-    useEffect(() => {
-        socket.on('message', (message) => {
-            setMessages(messages => [...messages, message]);
-        });
-        socket.on('guess', (guess) => {
-            setYourGuesses(ygs => [...ygs, guess]);
-        });
-
-    }, [goal]);
 
     const sendGuess = e => {
         if (e.key !== 'Enter') return null;

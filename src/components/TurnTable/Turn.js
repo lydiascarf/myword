@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 function Turn({ guess, score }) {
     return (
@@ -8,5 +10,9 @@ function Turn({ guess, score }) {
         </tr>
     );
 }
+Turn.propTypes = {
+    guess: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+};
 
 export default Turn;
