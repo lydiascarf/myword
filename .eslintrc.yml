@@ -15,7 +15,11 @@ parserOptions:
   sourceType: module
 plugins:
   - react
+  - testing-library
 rules:
+  eol-last:
+    - error
+    - always
   indent:
     - error
     - 4
@@ -29,3 +33,5 @@ rules:
   semi:
     - error
     - always
+  no-unexpected-multiline:
+    - error

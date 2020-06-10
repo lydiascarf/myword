@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
 import queryString from 'query-string';
-import io from 'socket.io-client';
 
 import MyBoard from '../MyBoard';
 import YourBoard from '../YourBoard';
