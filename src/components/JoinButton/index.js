@@ -14,7 +14,6 @@ const styles = {
         borderRadius: '100px',
         display: 'inline-block',
         width: '200px',
-        display: 'inline', 
         float: 'right',
         marginRight: '140px',
         padding: '12px',

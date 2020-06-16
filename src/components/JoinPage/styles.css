@@ -10,11 +10,15 @@ body {
     background-position: center 1px; 
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .card {
-  width: 780px;
   margin: auto;
   margin-top: 23px;
-  text-align: center;
+  text-align: center  !important;
   border-radius: 25px !important;
 }
 
@@ -22,6 +26,7 @@ body {
   background-color:#74aec1 !important;
   margin-top: 90px;
   text-align: center;
+  margin: 0 auto;
   border-radius: 25px !important;
 }
 
@@ -37,7 +42,7 @@ body {
 }
 
 .logo {
-  width: 340px;
+  max-width: 50%;
   height: 129;
 }
 
@@ -46,4 +51,8 @@ body {
   font-size: large;
   font-weight: 400;
   color: #242222;
+}
+
+.row {
+  margin-top: 80px;
 }
