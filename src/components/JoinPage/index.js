@@ -15,10 +15,9 @@ function JoinPage() {
 
     return (
         <Container fluid>
-            <Row></Row>
             <Row>
                 <Col></Col>
-                <Col>
+                <Col xs={6}>
                     <div className="cardHeader">
                         <div className="card-body">
                             <img src="../../assets/myWord_Logo-01.png" alt="logo" className="logo" href="logo"/>
@@ -43,7 +42,6 @@ function JoinPage() {
                 </Col>
                 <Col></Col>
             </Row>
-            <Row></Row>
         </Container>
     );
 }
