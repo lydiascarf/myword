@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 import CreateButton from '../CreateButton';
 import JoinButton from '../JoinButton';
@@ -18,16 +19,12 @@ function JoinPage() {
             <Row>
                 <Col></Col>
                 <Col xs={6}>
-                    <div className="cardHeader">
-                        <div className="card-body">
-                            <img src="../../assets/myWord_Logo-01.png" alt="logo" className="logo" href="logo"/>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="card-header">
-                        Join In
-                        </div>
-                        <div className="card-body">
+                    <Card className="cardHeader">
+                        <Card.Body><img src="../../assets/myWord_Logo-01.png" alt="logo" className="logo" href="logo"/></Card.Body>
+                    </Card>
+                    <Card>
+                        <Card.Header>Join In</Card.Header>
+                        <Card.Body>
                             <Form onSubmit={e => e.preventDefault()}>
                                 <Form.Group controlId="formName">
                                     <Form.Label>Name</Form.Label>
@@ -37,8 +34,8 @@ function JoinPage() {
                                 <CreateButton name={name} />
                                 <JoinButton name={name} room={room} setRoom={setRoom} />
                             </Form>
-                        </div>
-                    </div>
+                        </Card.Body>
+                    </Card>
                 </Col>
                 <Col></Col>
             </Row>
