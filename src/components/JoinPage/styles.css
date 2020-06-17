@@ -18,26 +18,27 @@ img {
 .card {
   margin: auto;
   margin-top: 23px;
-  text-align: center  !important;
-  border-radius: 25px !important;
+  text-align: center;
+  border-radius: 25px;
 }
 
 .cardHeader {
-  background-color:#74aec1 !important;
+  background-color:#74aec1;
   margin-top: 90px;
   text-align: center;
   margin: 0 auto;
   border-radius: 25px !important;
+  border: none;
 }
 
 .card-header {
-  background-color: #c8a885 !important;
+  background-color: #c8a885;
   color: white;
   font-weight: 600;
   font-size: x-large;
   border-top-left-radius: 25px !important;
   border-top-right-radius: 25px !important;
-  border-color:#c8a885 !important;
+  border-color:#c8a885;
   border-width: thick;
 }
 
@@ -48,6 +49,7 @@ img {
 
 .card-text {
   padding-top: 10px;
+  padding-bottom: 20px;
   font-size: large;
   font-weight: 400;
   color: #242222;
