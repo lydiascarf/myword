@@ -25,7 +25,7 @@ function getTurnValues({ t, N }) {
         case 7: return { n: N - 2, p: 1 };
         case 8: return { n: N - 2, p: 0 };
         case 9: return { n: N - 1, p: 0 };
-        case 10: return { n: N - 1, p: 1 };
+        case 10: return { n: N - 1, p: 2 };
         case 11: return { n: N, p: 0 };
         default: throw new Error('Invalid turn');
     }
