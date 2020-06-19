@@ -58,15 +58,7 @@ function GamePage({ location }) {
     return (
         <Container>
             <Row>
-                <Col>
-                    <Row>
-                        <YourBoard N={N} />
-                    </Row>
-                    <Row>
-                        {lastGame && <Alert variant='primary'>{lastGame}</Alert>}
-                        {messages.map((m, i) => <Alert key={i} variant={m.variant}>{m.user} - {m.text}</Alert>)}
-                    </Row>
-                </Col>
+
                 <Col sm={7}>
                     <Row>
                         <MyBoard N={N} />
@@ -77,6 +69,15 @@ function GamePage({ location }) {
                                 <Form.Control required type="text" onKeyPress={sendGuess} onChange={e => setGuess(e.target.value)} value={guess} />
                             </Form.Group>
                         </Form>
+                    </Row>
+                </Col>
+                <Col>
+                    <Row>
+                        <YourBoard N={N} />
+                    </Row>
+                    <Row>
+                        {lastGame && <Alert variant='primary'>{lastGame}</Alert>}
+                        {messages.map((m, i) => <Alert key={i} variant={m.variant}>{m.user} - {m.text}</Alert>)}
                     </Row>
                 </Col>
             </Row>
