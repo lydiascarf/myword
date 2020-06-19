@@ -4,13 +4,9 @@ import "./InputForm.css"
 function InputForm() {
 
   return (
-    <form>
-          <div >
-        <input className={"yourboard"}
-        value=""
-        />
-      </div>
-    </form>
+
+    <div className={'yourboard'}>A</div>
+  
   );
 }
 
