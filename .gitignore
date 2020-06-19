@@ -1,4 +1,5 @@
 build
+package.json
 
 # package directories
 node_modules

@@ -1,4 +1,5 @@
 import React from 'react';
+import InputForm from './InputForm'
 import PropTypes from 'prop-types';
 
 import { getTurnValues } from '../../utilities';
@@ -19,7 +20,11 @@ function Body({ N }) {
                             const isActive = num <= n + p && num >= p;
                             return (
                                 <td key={`${n}-${p}-${num}`}>
-                                    {isActive ? '_' : ''}
+                                    {/* {isActive ? '_' : ''} */}
+                                    {isActive ?
+                                        // '-'
+                                        <InputForm />
+                                        : ''}
                                 </td>
                             );
                         })}
