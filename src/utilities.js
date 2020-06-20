@@ -18,11 +18,11 @@ function getTurnValues({ t, N }) {
     switch (t) {
         case 1: return { n: N - 4, p: 0 };
         case 2: return { n: N - 3, p: 0 };
-        case 3: return { n: N - 3, p: 1 };
-        case 4: return { n: N - 3, p: 2 };
-        case 5: return { n: N - 3, p: 3 };
-        case 6: return { n: N - 2, p: 2 };
-        case 7: return { n: N - 2, p: 1 };
+        case 3: return { n: N - 4, p: 2 };
+        case 4: return { n: N - 4, p: 3 };
+        case 5: return { n: N - 4, p: 4 };
+        case 6: return { n: N - 3, p: 3 };
+        case 7: return { n: N - 3, p: 2 };
         case 8: return { n: N - 2, p: 0 };
         case 9: return { n: N - 1, p: 0 };
         case 10: return { n: N - 1, p: 2 };
