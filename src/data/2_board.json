@@ -1,0 +1,12 @@
+{
+    "board": {
+        "myturns": [
+            {
+                "guess": "ca",
+                "score": 250
+            }
+        ],
+        "yourturns": [],
+        "myword": "ANSWER"
+    }
+}
