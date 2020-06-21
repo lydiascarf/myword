@@ -3,8 +3,34 @@
         "myturns": [
             {
                 "guess": "ca",
-                "score": 250
+                "score": 100
+            },
+            {
+                "guess": "ast",
+                "score": 200
+            },
+            {
+                "guess": "cde",
+                "score": 300
+            },            
+            {
+                "guess": "edf",
+                "score": 400
+            },
+            {
+                "guess": "hik",
+                "score": 500
+            },
+            {
+                "guess": "ghij",
+                "score": 600
+            },
+            {
+                "guess": "ghik",
+                "score": 700
             }
+
+
         ],
         "yourturns": [],
         "myword": "ANSWER"
