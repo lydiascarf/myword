@@ -58,7 +58,6 @@ function GamePage({ location }) {
     return (
         <Container>
             <Row>
-
                 <Col sm={7}>
                     <Row>
                         <MyBoard N={N} />
