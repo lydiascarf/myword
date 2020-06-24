@@ -2,37 +2,64 @@
     "board": {
         "myturns": [
             {
-                "guess": "ca",
-                "score": 100
+                "guess": "ba",
+                "score": 1100
             },
             {
-                "guess": "ast",
-                "score": 200
+                "guess": "edc",
+                "score": 1200
+            },
+            {
+                "guess": "hgf",
+                "score": 1300
+            },            
+            {
+                "guess": "kji",
+                "score": 1400
+            },
+            {
+                "guess": "nml",
+                "score": 1500
+            },
+            {
+                "guess": "rqpo",
+                "score": 1600
+            },
+            {
+                "guess": "vuts",
+                "score": 1700
+            }
+        ],
+        "yourturns": [            
+            {
+                "guess": "ab",
+                "score": 2100
             },
             {
                 "guess": "cde",
-                "score": 300
+                "score": 2200
+            },
+            {
+                "guess": "fgh",
+                "score": 2300
             },            
             {
-                "guess": "edf",
-                "score": 400
+                "guess": "ijk",
+                "score": 2400
             },
             {
-                "guess": "hik",
-                "score": 500
+                "guess": "lmn",
+                "score": 2500
             },
             {
-                "guess": "ghij",
-                "score": 600
+                "guess": "opqr",
+                "score": 2600
             },
             {
-                "guess": "ghik",
-                "score": 700
+                "guess": "stuv",
+                "score": 2700
             }
-
-
         ],
-        "yourturns": [],
-        "myword": "ANSWER"
+        "myword": "HIDDEN"
     }
 }

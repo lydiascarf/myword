@@ -4,7 +4,7 @@ import './InputForm.css';
 function DisplayForm(props) {
     return (
         <form>
-            <div className={'myboard'}>
+            <div className={'yourboard'}>
                 {props.value}
             </div>
         </form>
