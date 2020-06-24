@@ -60,7 +60,7 @@ function GamePage({ location }) {
             <Row>
                 <Col sm={7}>
                     <Row>
-                        <MyBoard N={N} />
+                        <MyBoard N={N}/>
                     </Row>
                     <Row>
                         <Form>

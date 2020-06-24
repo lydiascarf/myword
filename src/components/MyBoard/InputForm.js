@@ -2,12 +2,14 @@ import React from 'react';
 import './InputForm.css';
 
 function InputForm(props) {
-    console.log('props:', props.value);
     return (
         <form>
             <div >
                 <input className={'myboard'}
-                    value={props.value}
+                    id={props.id} 
+                    value={props.char}
+                    onChange={props.handleInputChange}
+                    maxLength={1}
                 />
             </div>
         </form>

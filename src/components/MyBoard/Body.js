@@ -8,8 +8,8 @@ import { getTurnValues } from '../../utilities';
 
 const T = 11;
 let tCount = 0;
-let nCount = 0;
 let tGuess = '';
+let newGuess = [];
 
 function Body({ N }) {
     const N_array = [...Array(N).keys()].map(num => num + 1);
@@ -17,18 +17,58 @@ function Body({ N }) {
     
 
     const [myGuess, setMyGuess] = useState([
-        data.board.myturns.map(t => t.guess)
+        data.board.yourturns.map(t => t.guess)
     ]);
     const [myScore, setMyScore] = useState([
-        data.board.myturns.map(t => t.score)
+        data.board.yourturns.map(t => t.score)
     ]);
 
     useEffect(() => {
         loadInput(); 
-        console.log('myguess: ', myGuess);
-        console.log('myscore: ', myScore);
-
     }, []);
+
+
+  
+    useEffect(() => {
+        loadInput();
+    }, []);
+     
+    const handleInputChange = event => {
+        const id = event.target.id;
+        const char = event.target.value.toUpperCase();
+        const code = event.target.code;
+        const mykey = event.target.keyCode;
+        const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const idx = letters.indexOf(char);
+        console.log('char:', char);
+        console.log('mykey:', mykey);
+
+        if (idx === -1) {
+            setMyValue(
+                '',
+                event.target.id
+            );
+        } else {
+            console.log('turn: ', char);
+            console.log('id: ', id);
+            console.log('code: ', code);
+            setMyValue(
+                char,
+                event.target.id
+            );
+            console.log('myvalue: ', myValue);
+            newGuess.unshift(char);
+            console.log('newGuess:', newGuess);
+        }
+       
+        loadInput();
+    };
+
+    // eslint-disable-next-line
+    const [myValue, setMyValue] = useState({
+        char: [],
+        id: 0,
+    });
 
     function loadInput() {
         setMyGuess(
@@ -45,22 +85,25 @@ function Body({ N }) {
                 const { n, p } = getTurnValues({ t, N });
                 tCount = t;
                 tGuess = myGuess[tCount - 1];
-                console.log('tguess:', tGuess);
                 return (
                     <tr key={`${n}-${p}`}>
                         {N_array.map(num => {
                             const isActive = num <= n + p && num >= p;
+            
                             return (
+                                // <td key={`${n}-${p}-${num}`}>
                                 <td key={`${n}-${p}-${num}`}>
                                     {isActive ?
                                     // '-'
                                         tGuess ?
-                                            <DisplayForm
+                                            <DisplayForm 
                                                 value={tGuess[n+p-num]}
                                             />
                                             :
                                             <InputForm
-                                                value={''}
+                                                id={num.id}
+                                                value={num.char}
+                                                handleInputChange={handleInputChange}
                                             />
                                             
                                         : ''}
