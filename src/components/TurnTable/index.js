@@ -18,9 +18,15 @@ function TurnTable({header, turnRecords}) {
                     </thead>
                     <tbody>
                         {
-                            turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index} />)
+                            turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
                         }
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th className={'board-ft'}> </th>
+                            <th className={'board-ft'}> </th>
+                        </tr>
+                    </tfoot>
                 </table>
             </Col>
         </Row>
@@ -32,7 +38,7 @@ TurnTable.propTypes = {
         PropTypes.shape({
             guess: PropTypes.string.isRequired,
             score: PropTypes.number.isRequired,
-            header: PropTypes.string.isRequired,
+            header: PropTypes.string,
         })
     ).isRequired,
 };
