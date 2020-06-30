@@ -11,7 +11,7 @@ function YourBoard({ N }) {
         <Container>
             <Row>
                 <Col sm={6}>
-                    <TurnTable turnRecords={data.board.yourturns} />
+                    <TurnTable turnRecords={data.board.yourturns} header={'Your'} />
                 </Col>
             </Row>
         </Container>

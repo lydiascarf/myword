@@ -1,0 +1,13 @@
+.board-row {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
+    background-color: whitesmoke;
+}
+
+.board-hd {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
+    background-color: whitesmoke;
+}
