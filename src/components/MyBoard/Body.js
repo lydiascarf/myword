@@ -4,23 +4,23 @@ import DisplayForm from './DisplayForm';
 
 import { getTurnValues } from '../../utilities';
 
-const T = 11;
+const turns = 11;
 
-function Body({ N }) {
-    const N_array = [...Array(N).keys()].map(num => num + 1);
-    const T_array = [...Array(T).keys()].map(num => num + 1);
+function Body({ MaxTurnLength }) {
+    const N_array = [...Array(MaxTurnLength).keys()].map(num => num + 1);
+    const T_array = [...Array(turns).keys()].map(num => num + 1);
     
     return (
         <tbody>
-            {T_array.map(t => {
-                const { n, p } = getTurnValues({ t, N });
+            {T_array.map(currentTurn => {
+                const { currentTurnLength, offset } = getTurnValues({ currentTurn, MaxTurnLength });
 
                 return (
-                    <tr key={`${n}-${p}`}>
+                    <tr key={`${currentTurnLength}-${offset}`}>
                         {N_array.map(num => {
-                            const isActive = num <= n + p && num >= p;
+                            const isActive = num <= currentTurnLength + offset && num >= offset;
                             return (
-                                <td key={`${n}-${p}-${num}`}>
+                                <td key={`${currentTurnLength}-${offset}-${num}`}>
                                     {isActive ?
                                     // '-'
                                         <DisplayForm 
@@ -31,9 +31,6 @@ function Body({ N }) {
                                 </td>
                             );
                         })}
-                        {myScore[tCount-1]
-                            ? <td>{myScore[tCount-1]}</td>
-                            : <td>{''}</td> }
                     </tr>
                 );
             })}
@@ -42,7 +39,7 @@ function Body({ N }) {
 }
 
 Body.propTypes = {
-    N: PropTypes.number.isRequired,
+    MaxTurnLength: PropTypes.number.isRequired,
 };
 
 export default Body;
