@@ -1,17 +1,19 @@
 .board-row {
-    margin-right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 80px;
+    padding-left: 40px;
     background-color: whitesmoke;
+    text-transform: uppercase;
 }
 
 .board-hd {
-    margin-right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 80px;
+    padding-left: 40px;
     background-color: whitesmoke;
 }
-
-.word {
-    text-align: center;
+.board-ft {
+    padding-top: 10px;
+    padding-right: 80px;
+    padding-left: 40px;
+    background-color: whitesmoke;
 }

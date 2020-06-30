@@ -7,17 +7,17 @@ import { getTurnValues } from '../../utilities';
 const turns = 11;
 
 function Body({ MaxTurnLength }) {
-    const N_array = [...Array(MaxTurnLength).keys()].map(num => num + 1);
-    const T_array = [...Array(turns).keys()].map(num => num + 1);
+    const Turn_array = [...Array(MaxTurnLength).keys()].map(num => num + 1);
+    const Game_array = [...Array(turns).keys()].map(num => num + 1);
     
     return (
         <tbody>
-            {T_array.map(currentTurn => {
+            {Game_array.map(currentTurn => {
                 const { currentTurnLength, offset } = getTurnValues({ currentTurn, MaxTurnLength });
 
                 return (
                     <tr key={`${currentTurnLength}-${offset}`}>
-                        {N_array.map(num => {
+                        {Turn_array.map(num => {
                             const isActive = num <= currentTurnLength + offset && num >= offset;
                             return (
                                 <td key={`${currentTurnLength}-${offset}-${num}`}>
