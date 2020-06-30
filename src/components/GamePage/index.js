@@ -12,6 +12,7 @@ import queryString from 'query-string';
 import MyBoard from '../MyBoard';
 import YourBoard from '../YourBoard';
 
+
 let socket;
 
 function GamePage({ location }) {
@@ -35,24 +36,7 @@ function GamePage({ location }) {
     }, [ENDPOINT, location.search]);
 
     const sendGuess = e => {
-        if (e.key !== 'Enter') return null;
-        e.preventDefault();
-        if (guess && Math.abs(myGuesses.length - yourGuesses.length) <= 1) {
-            socket.emit('guess', guess, (score) => {
-                console.log(guess);
-                const newGuess = { guess, score };
-                setMyGuesses(myGuesses => [...myGuesses, newGuess], () => {
-                    setGuess('');
-                    console.log(myGuesses);
-                });
-            });
-        } else if (guess) {
-            console.error('ERROR: STAY IN SYNC');
-            setGuess('');
-        } else {
-            console.error('ERROR: NO GUESS');
-            setGuess('');
-        }
+        console.log(guess);
     };
 
     return (
@@ -60,7 +44,7 @@ function GamePage({ location }) {
             <Row>
                 <Col sm={7}>
                     <Row>
-                        <MyBoard N={N}/>
+                        <MyBoard N={N} />
                     </Row>
                     <Row>
                         <Form>
@@ -73,11 +57,11 @@ function GamePage({ location }) {
                 <Col>
                     <Row>
                         <YourBoard N={N} />
-                    </Row>
-                    <Row>
+                    </Row> 
+                    <Row> 
                         {lastGame && <Alert variant='primary'>{lastGame}</Alert>}
-                        {messages.map((m, i) => <Alert key={i} variant={m.variant}>{m.user} - {m.text}</Alert>)}
-                    </Row>
+                        {messages.map((m, i) => <Alert key={i} variant={m.variant}>{m.user} - {m.text}</Alert>)} 
+                    </Row> 
                 </Col>
             </Row>
         </Container >
