@@ -1,24 +1,29 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import PropTypes from 'prop-types';
 
 import Turn from './Turn';
 
-function TurnTable({turnRecords, header}) {
+function TurnTable({header, turnRecords}) {
     return (
-        <table>
-            <thead>
-                <tr> 
-                    <th className={'board-hd'}>{header} Guess</th>
-                    <th className={'board-hd'}>{header} Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index} />)
-                }
-            </tbody>
-        </table>
-
+        <Row>
+            <Col sm={6}>
+                <table>
+                    <thead>
+                        <tr> 
+                            <th className={'board-hd'}>{header} Guess</th>
+                            <th className={'board-hd'}>{header} Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index} />)
+                        }
+                    </tbody>
+                </table>
+            </Col>
+        </Row>
     );
 }
 

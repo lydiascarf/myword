@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import TurnTable from '../TurnTable';
 import data from '../../data/2_board.json';
+import './styles.css';
 
-function MyBoard({ N }) {
-    return (
-        <Container>
-            <Row>
-                <Col sm={6}>
-                    <TurnTable turnRecords={data.board.myturns} header={'My'}  />
-                </Col>
-            </Row>
-        </Container>
+function MyBoard({ MaxTurnLength }) {
+    return (<div>
+        <TurnTable header={'My'} turnRecords={data.board.myturns}/>
+    </div>
     );
 }
 
 MyBoard.propTypes = {
-    N: PropTypes.number.isRequired,
+    MaxTurnLength: PropTypes.number.isRequired,
 };
 
 export default MyBoard;

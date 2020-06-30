@@ -1,10 +1,8 @@
-function getScore({ goal, guess, t, N }) {
-    const { n, p } = getTurnValues({ t, N });
-    // console.log(n, p);
+function getScore({ goal, guess, turn, MaxTurnLength }) {
+    const { currentTurnLength, offset } = getTurnValues({ turn, MaxTurnLength });
 
     let score = 0;
-    for (let i = p; i <= p + n; i++) {
-        // console.log(score);
+    for (let i = offset; i <= offset + currentTurnLength; i++) {
         if (goal[i] === guess[i]) score += 1000;
         else if (goal.includes(guess[i])) score += 250;
 
@@ -14,19 +12,19 @@ function getScore({ goal, guess, t, N }) {
     }
 }
 
-function getTurnValues({ t, N }) {
-    switch (t) {
-        case 1: return { n: N - 4, p: 0 };
-        case 2: return { n: N - 3, p: 0 };
-        case 3: return { n: N - 4, p: 2 };
-        case 4: return { n: N - 4, p: 3 };
-        case 5: return { n: N - 4, p: 4 };
-        case 6: return { n: N - 3, p: 3 };
-        case 7: return { n: N - 3, p: 2 };
-        case 8: return { n: N - 2, p: 0 };
-        case 9: return { n: N - 1, p: 0 };
-        case 10: return { n: N - 1, p: 2 };
-        case 11: return { n: N, p: 0 };
+function getTurnValues({ turn, MaxTurnLength }) {
+    switch (turn) {
+        case 1: return { currentTurnLength: MaxTurnLength - 4, offset: 0 };
+        case 2: return { currentTurnLength: MaxTurnLength - 3, offset: 0 };
+        case 3: return { currentTurnLength: MaxTurnLength - 4, offset: 2 };
+        case 4: return { currentTurnLength: MaxTurnLength - 4, offset: 3 };
+        case 5: return { currentTurnLength: MaxTurnLength - 4, offset: 4 };
+        case 6: return { currentTurnLength: MaxTurnLength - 3, offset: 3 };
+        case 7: return { currentTurnLength: MaxTurnLength - 3, offset: 2 };
+        case 8: return { currentTurnLength: MaxTurnLength - 2, offset: 0 };
+        case 9: return { currentTurnLength: MaxTurnLength - 1, offset: 0 };
+        case 10: return { currentTurnLength: MaxTurnLength - 1, offset: 2 };
+        case 11: return { currentTurnLength: MaxTurnLength, offset: 0 };
         default: throw new Error('Invalid turn');
     }
 }

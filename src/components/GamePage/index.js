@@ -5,7 +5,7 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
+import data from '../../data/2_board.json';
 
 import queryString from 'query-string';
 
@@ -16,7 +16,7 @@ import YourBoard from '../YourBoard';
 let socket;
 
 function GamePage({ location }) {
-    const N = 6;
+    const MaxTurnLength = 6;
     const ENDPOINT = 'localhost:5000';
     const [lastGame, setLastGame] = useState(null);
     const [name, setName] = useState('');
@@ -40,17 +40,30 @@ function GamePage({ location }) {
     };
 
     return (
-        <Container>
+        <Container> 
+            <Col sm={12}>
+                <Row>
+                    <Col sm={12}>
+                        <div className="d-flex justify-content-around">
+                            My Word: {data.board.myword}
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={6}>
+                        <div className="d-flex justify-content-around">
+                            <MyBoard MaxTurnLength={MaxTurnLength} />
+                        </div>
+                    </Col>
+                    <Col sm={6}>
+                        <div className="d-flex justify-content-around">
+                            <YourBoard MaxTurnLength={MaxTurnLength} />
+                        </div>
+                    </Col>
+                </Row>
+            </Col>        
             <Row>
-                <Col sm={7}>
-                    <Row>
-                        <MyBoard N={N} />
-                    </Row>
-                </Col>
                 <Col>
-                    <Row>
-                        <YourBoard N={N} />
-                    </Row> 
                     <Row> 
                         {lastGame && <Alert variant='primary'>{lastGame}</Alert>}
                         {messages.map((m, i) => <Alert key={i} variant={m.variant}>{m.user} - {m.text}</Alert>)} 
