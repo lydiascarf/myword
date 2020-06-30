@@ -1,19 +1,19 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Table from 'react-bootstrap/Table';
-
 import PropTypes from 'prop-types';
-
-import Body from './Body';
-import Header from './Header';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import TurnTable from '../TurnTable';
+import data from '../../data/2_board.json';
 
 function YourBoard({ N }) {
     return (
         <Container>
-            <Table striped bordered hover size="sm">
-                <Header N={N} />
-                <Body N={N} />
-            </Table>
+            <Row>
+                <Col sm={6}>
+                    <TurnTable turnRecords={data.board.yourturns} />
+                </Col>
+            </Row>
         </Container>
     );
 }

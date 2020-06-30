@@ -2,32 +2,48 @@
     "board": {
         "myturns": [
             {
-                "guess": "ba",
-                "score": 1100
+                "guess": "ab",
+                "score": 100
             },
             {
-                "guess": "edc",
-                "score": 1200
+                "guess": "cde",
+                "score": 200
             },
             {
-                "guess": "hgf",
-                "score": 1300
+                "guess": "fgh",
+                "score": 300
             },            
             {
-                "guess": "kji",
-                "score": 1400
+                "guess": "ijk",
+                "score": 400
             },
             {
-                "guess": "nml",
-                "score": 1500
+                "guess": "lmn",
+                "score": 500
             },
             {
-                "guess": "rqpo",
-                "score": 1600
+                "guess": "opqr",
+                "score": 600
             },
             {
-                "guess": "vuts",
-                "score": 1700
+                "guess": "stuv",
+                "score": 700
+            },
+            {
+                "guess": "wxyz",
+                "score": 800
+            },
+            {
+                "guess": "aaaaa",
+                "score": 900
+            },
+            {
+                "guess": "bbbbb",
+                "score": 1000
+            },
+            {
+                "guess": "cccccc",
+                "score": 1100
             }
         ],
         "yourturns": [            
@@ -58,6 +74,22 @@
             {
                 "guess": "stuv",
                 "score": 2700
+            },
+            {
+                "guess": "wxyz",
+                "score": 2800
+            },
+            {
+                "guess": "aaaaa",
+                "score": 2900
+            },
+            {
+                "guess": "bbbbb",
+                "score": 3000
+            },
+            {
+                "guess": "cccccc",
+                "score": 3100
             }
         ],
         "myword": "HIDDEN"

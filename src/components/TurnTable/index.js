@@ -14,7 +14,6 @@ function TurnTable({turnRecords}) {
             </thead>
             <tbody>
                 {
-                    // turn records include offsets derived from turn #
                     turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index} />)
                 }
             </tbody>
