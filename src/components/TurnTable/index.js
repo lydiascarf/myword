@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import Turn from './Turn';
 
-function TurnTable({turnRecords}) {
+function TurnTable({turnRecords, header}) {
     return (
         <table>
             <thead>
-                <tr>
-                    <th>Guess</th>
-                    <th>Score</th>
+                <tr> 
+                    <th className={'board-hd'}>{header} Guess</th>
+                    <th className={'board-hd'}>{header} Score</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +27,7 @@ TurnTable.propTypes = {
         PropTypes.shape({
             guess: PropTypes.string.isRequired,
             score: PropTypes.number.isRequired,
+            header: PropTypes.string.isRequired,
         })
     ).isRequired,
 };

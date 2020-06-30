@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../MyBoard/styles.css'
 
 
 function Turn({ guess, score }) {
     return (
         <tr>
-            <td>{guess}</td>
-            <td>{score}</td>
+            <td className={'board-row'}>{guess}</td>
+            <td className={'board-row'}>{score}</td>
         </tr>
     );
 }

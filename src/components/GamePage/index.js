@@ -46,13 +46,6 @@ function GamePage({ location }) {
                     <Row>
                         <MyBoard N={N} />
                     </Row>
-                    <Row>
-                        <Form>
-                            <Form.Group controlId="formGuess">
-                                <Form.Control required type="text" onKeyPress={sendGuess} onChange={e => setGuess(e.target.value)} value={guess} />
-                            </Form.Group>
-                        </Form>
-                    </Row>
                 </Col>
                 <Col>
                     <Row>
