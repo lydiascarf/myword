@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 
 import Turn from './Turn';
 
-function TurnTable({header, turnRecords}) {
+function TurnTable({ header, turnRecords }) {
+
     return (
         <Row>
             <Col sm={6}>
                 <table>
                     <thead>
                         <tr> 
-                            <th className={'board-hd'}>{header} Guess</th>
-                            <th className={'board-hd'}>{header} Score</th>
+                            <th className={'board-hd'}>{header}<br/>Guess</th>
+                            <th className={'board-hd'}>{header}<br/>Score</th>
                         </tr>
                     </thead>
                     <tbody>
