@@ -2,6 +2,7 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import PropTypes from 'prop-types';
+import '../MyBoard/styles.css';
 
 import Turn from './Turn';
 
@@ -10,21 +11,22 @@ function TurnTable({ header, turnRecords }) {
     return (
         <Row>
             <Col sm={6}>
-                <div className={'board-box'}>
-                    <table>
+                <table>
+                    <div className={'board-box'}>
                         <thead>
                             <tr> 
                                 <th>{header}<br/>Guess</th>
                                 <th>{header}<br/>Score</th>
                             </tr>
                         </thead>
+                    
                         <tbody>
                             {
                                 turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
                             }
                         </tbody>
-                    </table>
-                </div>
+                    </div>
+                </table>
             </Col>
         </Row>
     );

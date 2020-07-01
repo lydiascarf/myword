@@ -43,20 +43,22 @@ function GamePage({ location }) {
         <Container> 
             <Col sm={12}>
                 <Row>
-                    <Col sm={12}>
-                        <div className="d-flex justify-content-around">
+                    <Col md={12}>
+                        <div className="d-flex justify-content-center">
                             My Word: {data.board.myword}
                         </div>
                     </Col>
                 </Row>
+            </Col>
+            <Col sm={12}>
                 <Row>
-                    <Col sm={6}>
-                        <div className="d-flex justify-content-around">
+                    <Col md={6}>
+                        <div className="d-flex justify-content-center">
                             <MyBoard />
                         </div>
                     </Col>
-                    <Col sm={6}>
-                        <div className="d-flex justify-content-around">
+                    <Col md={6}>
+                        <div className="d-flex justify-content-center">
                             <YourBoard />
                         </div>
                     </Col>
