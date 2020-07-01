@@ -1,5 +1,5 @@
 .board-row {
-    padding-right: 80px;
+    padding-right: 60px;
     padding-left: 40px;
     background-color: whitesmoke;
     text-transform: uppercase;
@@ -7,13 +7,13 @@
 
 .board-hd {
     padding-top: 10px;
-    padding-right: 80px;
+    padding-right: 60px;
     padding-left: 40px;
     background-color: whitesmoke;
 }
 .board-ft {
     padding-top: 10px;
-    padding-right: 80px;
+    padding-right: 60px;
     padding-left: 40px;
     background-color: whitesmoke;
 }

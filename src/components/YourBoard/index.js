@@ -7,7 +7,7 @@ import data from '../../data/2_board.json';
 function YourBoard({ MaxTurnLength }) {
     return (
         <Col sm={6}>
-            <TurnTable turnRecords={data.board.yourturns} header={'Your'} />
+            <TurnTable header={'Your'} turnRecords={data.board.yourturns} />
         </Col>
     );
 }
