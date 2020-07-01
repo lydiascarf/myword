@@ -52,12 +52,12 @@ function GamePage({ location }) {
                 <Row>
                     <Col sm={6}>
                         <div className="d-flex justify-content-around">
-                            <MyBoard MaxTurnLength={MaxTurnLength} />
+                            <MyBoard />
                         </div>
                     </Col>
                     <Col sm={6}>
                         <div className="d-flex justify-content-around">
-                            <YourBoard MaxTurnLength={MaxTurnLength} />
+                            <YourBoard />
                         </div>
                     </Col>
                 </Row>
