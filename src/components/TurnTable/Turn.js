@@ -7,8 +7,8 @@ function Turn({ guess, score, index }) {
     const offset = getOffset(index);
     return (
         <tr>
-            <td className={'board-row'}>{offset}{guess}</td>
-            <td className={'board-row'}>{score}</td>
+            <td className={'guess-row'}><span className={'offset'}>{offset}</span>{guess}</td>
+            <td className={'score-row'}>{score}</td>
         </tr>
     );
 }

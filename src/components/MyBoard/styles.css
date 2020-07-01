@@ -1,19 +1,25 @@
-.board-row {
-    padding-right: 60px;
+.board-box {
+    width: 350px;
+    height: auto;
     padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
     background-color: whitesmoke;
-    text-transform: uppercase;
+
 }
 
-.board-hd {
-    padding-top: 10px;
-    padding-right: 60px;
-    padding-left: 40px;
+.guess-row {
+    padding-right: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     background-color: whitesmoke;
 }
-.board-ft {
-    padding-top: 10px;
-    padding-right: 60px;
-    padding-left: 40px;
+.score-row {
     background-color: whitesmoke;
+}
+
+.offset {
+    color: whitesmoke;
 }
