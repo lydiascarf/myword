@@ -1,17 +1,14 @@
 .board-box {
-    width: 350px;
-    height: auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
     background-color: whitesmoke;
-
 }
 
 .guess-row {
-    padding-right: 30px;
+    padding-right: 80px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: whitesmoke;
