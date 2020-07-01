@@ -10,25 +10,21 @@ function TurnTable({ header, turnRecords }) {
     return (
         <Row>
             <Col sm={6}>
-                <table>
-                    <thead>
-                        <tr> 
-                            <th className={'board-hd'}>{header}<br/>Guess</th>
-                            <th className={'board-hd'}>{header}<br/>Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
-                        }
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th className={'board-ft'}> </th>
-                            <th className={'board-ft'}> </th>
-                        </tr>
-                    </tfoot>
-                </table>
+                <div className={'board-box'}>
+                    <table>
+                        <thead>
+                            <tr> 
+                                <th>{header}<br/>Guess</th>
+                                <th>{header}<br/>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </Col>
         </Row>
     );
