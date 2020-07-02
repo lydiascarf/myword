@@ -5,9 +5,10 @@ import '../MyBoard/styles.css';
 
 function Turn({ guess, score, index }) {
     const offset = getOffset(index);
+    let currentTurn = index + 1;
     return (
         <tr>
-            <td className={'guess-row'}><span className={'offset'}>{offset}</span>{guess}</td>
+            <td className={'guess-row'}>{currentTurn}. <span className={'offset'}>{offset}</span>{guess}</td>
             <td className={'score-row'}>{score}</td>
         </tr>
     );

@@ -1,7 +1,49 @@
 {
     "board": {
-        "myturns": [],
-        "yourturns": [],
-        "myword": "ANSWER"
+        "myturns": [
+            {
+                "guess": "ab",
+                "score": 100
+            },
+            {
+                "guess": "cde",
+                "score": 200
+            },
+            {
+                "guess": "fgh",
+                "score": 300
+            },            
+            {
+                "guess": "ijk",
+                "score": 400
+            },
+            {
+                "guess": "lmn",
+                "score": 500
+            }
+        ],
+        "yourturns": [            
+            {
+                "guess": "ab",
+                "score": 2100
+            },
+            {
+                "guess": "cde",
+                "score": 2200
+            },
+            {
+                "guess": "fgh",
+                "score": 2300
+            },            
+            {
+                "guess": "ijk",
+                "score": 2400
+            },
+            {
+                "guess": "lmn",
+                "score": 2500
+            }
+        ],
+        "myword": "HIDDEN"
     }
 }

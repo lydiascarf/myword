@@ -5,10 +5,8 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import data from '../../data/2_board.json';
-
+import data from '../../data/1_board.json';
 import queryString from 'query-string';
-
 import MyBoard from '../MyBoard';
 import YourBoard from '../YourBoard';
 
@@ -26,7 +24,7 @@ function GamePage({ location }) {
     const [myGuesses, setMyGuesses] = useState([]);
     const [yourGuesses, setYourGuesses] = useState([]);
     const [messages, setMessages] = useState([]);
-
+    const totalTurns = 11;
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
 
@@ -53,14 +51,14 @@ function GamePage({ location }) {
             <Col sm={12}>
                 <Row>
                     <Col md={6}>
-                        <div className="d-flex justify-content-center">
-                            <MyBoard />
+                        <div className="d-flex justify-content-center"> 
+                            <MyBoard totalTurns={totalTurns} data={data}/>
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div className="d-flex justify-content-center">
-                            <YourBoard />
-                        </div>
+                        <div className="d-flex justify-content-center">    
+                            <YourBoard totalTurns={totalTurns} data={data}/>
+                        </div> 
                     </Col>
                 </Row>
             </Col>        
