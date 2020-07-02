@@ -1,19 +1,25 @@
 .board-box {
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+.head-row {
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 5px;
+    padding-left: 20px;
     background-color: whitesmoke;
 }
 
 .guess-row {
-    padding-right: 80px;
+    padding-left: 20px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: whitesmoke;
 }
 .score-row {
+    padding-left: 20px;
+    padding-left: 30px;
     background-color: whitesmoke;
 }
 

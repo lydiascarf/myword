@@ -7,25 +7,23 @@ import '../MyBoard/styles.css';
 import Turn from './Turn';
 
 function TurnTable({ header, turnRecords }) {
-
+    const turns = turnRecords.length;
+    console.log(turns);
     return (
         <Row>
             <Col sm={6}>
-                <table>
-                    <div className={'board-box'}>
-                        <thead>
-                            <tr> 
-                                <th>{header}<br/>Guess</th>
-                                <th>{header}<br/>Score</th>
-                            </tr>
-                        </thead>
-                    
-                        <tbody>
-                            {
-                                turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
-                            }
-                        </tbody>
-                    </div>
+                <table className={'board-box'}>
+                    <thead>
+                        <tr> 
+                            <th className={'head-row'}>{header}<br/>Guess</th>
+                            <th className={'head-row'}>{header}<br/>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            turnRecords.map(({ guess, score }, index) => <Turn key={score + guess} guess={guess} score={score} index={index}/>)
+                        }
+                    </tbody>
                 </table>
             </Col>
         </Row>
