@@ -6,9 +6,8 @@ imagine a link here
 
 ## Run it locally
 
-1) run some command `sh like-this.sh`
-2) go to `localhost:666`
-3) just kidding, I'm not set up for this yet
+1) `npm start`
+2) go to http://localhost:3000/
 
 ## Description
 
@@ -79,38 +78,9 @@ Int p: 0-based offset for guess' position (in characters)
 
 ## Tech Stack
 
-#### GatsbyJS / React for UI
-
-why?
-* pre-existing expertise
-* server-side rendering: performance, mdx
-* built-in GraphQL is swell for these lambdas
-
-#### AWS for hosting, deployment, and more (maybe with deployment framework)
-
-utilizing an API gateway, node.js lambdas, and some kinda auth
-
-potential resources:
-- https://www.serverless.com/learn/courses/serverless-for-frontend-developers/
-- https://www.gatsbyjs.org/docs/deploying-to-aws-amplify/
-
-why? https://winterwindsoftware.com/serverless-newbies-should-use-framework/
-* makes life easy on day 1
-* out-of-the-box scalability
-* I don't know AWS good
-
-#### Stuff Copied From `amplify init` output
-
-```
-"amplify status" will show you what you've added already and if it's locally configured or deployed
-"amplify add <category>" will allow you to add features like user login or a backend API
-"amplify push" will build all your local backend resources and provision it in the cloud
-"amplify console" to open the Amplify Console and view your project status
-"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
-
-Pro tip:
-Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
-```
+React
+GraphQL
+AWS Amplify
 
 ## Contributors
 
