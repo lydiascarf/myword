@@ -1,6 +1,6 @@
 {
     "board": {
-        "myturns": [
+        "blueturns": [
             {
                 "guess": "ab",
                 "score": 100
@@ -22,7 +22,7 @@
                 "score": 500
             }
         ],
-        "yourturns": [            
+        "beigeturns": [            
             {
                 "guess": "ab",
                 "score": 2100
@@ -44,6 +44,6 @@
                 "score": 2500
             }
         ],
-        "myword": "HIDDEN"
+        "blueword": "HIDDEN"
     }
 }

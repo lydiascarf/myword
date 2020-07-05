@@ -6,7 +6,7 @@ import data from '../../data/2_board.json';
 function YourBoard() {
     return (
         <Col sm={6}>
-            <TurnTable turnRecords={data.board.yourturns} />
+            <TurnTable turnRecords={data.board.beigeturns} />
         </Col>
     );
 }

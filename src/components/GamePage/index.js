@@ -13,7 +13,7 @@ function GamePage() {
                 <Row>
                     <Col md={12}>
                         <div className="d-flex justify-content-center">
-                            My Word: {data.board.myword}
+                            My Word: {data.board.blueword}
                         </div>
                     </Col>
                 </Row>
