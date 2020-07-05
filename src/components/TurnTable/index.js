@@ -7,11 +7,11 @@ import './styles.css';
 import Turn from './Turn';
 
 function TurnTable({ isMine, turnRecords }) {
-    const header = isMine? 'My': 'Your' ;
+    const header = isMine ? 'My' : 'Your';
     return (
         <Row>
             <Col sm={6}>
-                <table className='board-box'>
+                <table className={'board-box'}>
                     <thead>
                         <tr> 
                             <th className='head-row'>{header}<br/>Guess</th>
@@ -33,10 +33,10 @@ TurnTable.propTypes = {
     turnRecords: PropTypes.arrayOf(
         PropTypes.shape({
             guess: PropTypes.string.isRequired,
-            score: PropTypes.number.isRequired,
-            isMine: PropTypes.bool,
+            score: PropTypes.number.isRequired,  
         })
     ).isRequired,
+    isMine: PropTypes.bool,
 };
 
 TurnTable.defaultProps = {
