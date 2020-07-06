@@ -21,7 +21,7 @@ function GamePage() {
                 <Row>
                     <Col md={6}>
                         <div className="d-flex justify-content-center"> 
-                            <TurnTable isMine turnRecords={data.board.blueTurns}/>
+                            <TurnTable isMine isBlue turnRecords={data.board.blueTurns}/>
                         </div>
                     </Col>
                     <Col md={6}>
