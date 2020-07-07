@@ -10,6 +10,11 @@
             "StackName": "amplify-myword-dev-184430",
             "StackId": "arn:aws:cloudformation:us-east-1:978987127473:stack/amplify-myword-dev-184430/a2a77610-a06b-11ea-a282-0a73682547f5",
             "AmplifyAppId": "d3fy5qij0mwxwx"
+        },
+        "categories": {
+            "auth": {
+                "mywordc2939822": {}
+            }
         }
     }
 }

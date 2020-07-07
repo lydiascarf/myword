@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"mywordc2939822": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
