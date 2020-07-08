@@ -6,12 +6,14 @@ import './styles.css';
 
 import Turn from './Turn';
 
-function TurnTable({ isMine, turnRecords }) {
+function TurnTable({ isMine, isBlue, turnRecords }) {
     const header = isMine ? 'My' : 'Your';
+    const boxClass = isBlue ? 'blue-box' : 'beige-box';
+    
     return (
         <Row>
             <Col sm={6}>
-                <table className={'board-box'}>
+                <table className={boxClass}>
                     <thead>
                         <tr> 
                             <th className='head-row'>{header}<br/>Guess</th>
@@ -36,10 +38,12 @@ TurnTable.propTypes = {
             score: PropTypes.number.isRequired,  
         })
     ).isRequired,
+    isBlue: PropTypes.bool,
     isMine: PropTypes.bool,
 };
 
 TurnTable.defaultProps = {
+    isBlue: false,
     isMine: false,
 };
 
