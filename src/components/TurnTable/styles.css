@@ -4,10 +4,25 @@
     border-radius: 5px;
     background-color: whitesmoke;
 }
+.beige-box {
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    color:#C8A885;
+    background-color: whitesmoke;
+}
+.blue-box {
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    color: #74AEC1;
+    background-color: whitesmoke;
+}
 .head-row {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
+    color: #666666;
     background-color: whitesmoke;
 }
 
@@ -25,10 +40,4 @@
 
 .offset {
     color: whitesmoke;
-}
-.blue-board-box {
-    color: #74AEC1;
-}
-.beige-board-box {
-    color:#C8A885;
 }
