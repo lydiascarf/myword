@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "myword",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authmyworda163cb70",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

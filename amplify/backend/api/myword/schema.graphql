@@ -1,0 +1,20 @@
+type Game @model {
+  id: ID!
+  name: String!
+  players: [Player] @connection(keyName: "byGame", fields: ["id"])
+}
+
+type Player @model @key(name: "byGame", fields: ["gameID"]) {
+  id: ID!
+  title: String!
+  gameID: ID!
+  game: Game @connection(fields: ["gameID"])
+  turns: [Turn] @connection(keyName: "byPlayer", fields: ["id"])
+}
+
+type Turn @model @key(name: "byPlayer", fields: ["playerID", "content"]) {
+  id: ID!
+  playerID: ID!
+  player: Player @connection(fields: ["playerID"])
+  content: String!
+}
