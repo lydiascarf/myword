@@ -8,7 +8,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authmywordb8dedf3f"
+							"userPoolId": "authmyworda163cb70"
 						}
 					},
 					"additionalAuthenticationProviders": []

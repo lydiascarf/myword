@@ -7,43 +7,40 @@ export const createGame = /* GraphQL */ `
     $condition: ModelGameConditionInput
   ) {
     createGame(input: $input, condition: $condition) {
-      gameWords {
-        game {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        gameID
-        id
-        playerID
-        player {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
-      name
+      keyword
       players {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      turns {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -60,43 +57,40 @@ export const updateGame = /* GraphQL */ `
     $condition: ModelGameConditionInput
   ) {
     updateGame(input: $input, condition: $condition) {
-      gameWords {
-        game {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        gameID
-        id
-        playerID
-        player {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
-      name
+      keyword
       players {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      turns {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -113,43 +107,40 @@ export const deleteGame = /* GraphQL */ `
     $condition: ModelGameConditionInput
   ) {
     deleteGame(input: $input, condition: $condition) {
-      gameWords {
-        game {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        gameID
-        id
-        playerID
-        player {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
       id
-      name
+      keyword
       players {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      turns {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -160,135 +151,249 @@ export const deleteGame = /* GraphQL */ `
     }
   }
 `;
-export const createGameWord = /* GraphQL */ `
-  mutation CreateGameWord(
-    $input: CreateGameWordInput!
-    $condition: ModelGameWordConditionInput
+export const createGamePlayer = /* GraphQL */ `
+  mutation CreateGamePlayer(
+    $input: CreateGamePlayerInput!
+    $condition: ModelGamePlayerConditionInput
   ) {
-    createGameWord(input: $input, condition: $condition) {
+    createGamePlayer(input: $input, condition: $condition) {
       game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
         id
-        name
+        keyword
         players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
         updatedAt
       }
-      gameID
+      gameWord
       id
-      playerID
       player {
-        id
-        title
-        turns {
+        games {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
+        id
+        name
         createdAt
         updatedAt
+      }
+      turns {
+        items {
+          id
+          score
+          word
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
     }
   }
 `;
-export const updateGameWord = /* GraphQL */ `
-  mutation UpdateGameWord(
-    $input: UpdateGameWordInput!
-    $condition: ModelGameWordConditionInput
+export const updateGamePlayer = /* GraphQL */ `
+  mutation UpdateGamePlayer(
+    $input: UpdateGamePlayerInput!
+    $condition: ModelGamePlayerConditionInput
   ) {
-    updateGameWord(input: $input, condition: $condition) {
+    updateGamePlayer(input: $input, condition: $condition) {
       game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
         id
-        name
+        keyword
         players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
         updatedAt
       }
-      gameID
+      gameWord
       id
-      playerID
       player {
-        id
-        title
-        turns {
+        games {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
+        id
+        name
         createdAt
         updatedAt
+      }
+      turns {
+        items {
+          id
+          score
+          word
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteGameWord = /* GraphQL */ `
-  mutation DeleteGameWord(
-    $input: DeleteGameWordInput!
-    $condition: ModelGameWordConditionInput
+export const deleteGamePlayer = /* GraphQL */ `
+  mutation DeleteGamePlayer(
+    $input: DeleteGamePlayerInput!
+    $condition: ModelGamePlayerConditionInput
   ) {
-    deleteGameWord(input: $input, condition: $condition) {
+    deleteGamePlayer(input: $input, condition: $condition) {
       game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
         id
-        name
+        keyword
         players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         createdAt
         updatedAt
       }
-      gameID
+      gameWord
       id
-      playerID
       player {
-        id
-        title
-        turns {
+        games {
+          items {
+            game {
+              id
+              keyword
+              createdAt
+              updatedAt
+            }
+            gameWord
+            id
+            player {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            turns {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
           nextToken
         }
+        id
+        name
         createdAt
         updatedAt
+      }
+      turns {
+        items {
+          id
+          score
+          word
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -301,20 +406,45 @@ export const createPlayer = /* GraphQL */ `
     $condition: ModelPlayerConditionInput
   ) {
     createPlayer(input: $input, condition: $condition) {
-      id
-      title
-      turns {
+      games {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         nextToken
       }
+      id
+      name
       createdAt
       updatedAt
     }
@@ -326,20 +456,45 @@ export const updatePlayer = /* GraphQL */ `
     $condition: ModelPlayerConditionInput
   ) {
     updatePlayer(input: $input, condition: $condition) {
-      id
-      title
-      turns {
+      games {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         nextToken
       }
+      id
+      name
       createdAt
       updatedAt
     }
@@ -351,20 +506,45 @@ export const deletePlayer = /* GraphQL */ `
     $condition: ModelPlayerConditionInput
   ) {
     deletePlayer(input: $input, condition: $condition) {
-      id
-      title
-      turns {
+      games {
         items {
-          gameID
+          game {
+            id
+            keyword
+            players {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          gameWord
           id
-          playerID
-          score
-          content
+          player {
+            games {
+              nextToken
+            }
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          turns {
+            items {
+              id
+              score
+              word
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
           updatedAt
         }
         nextToken
       }
+      id
+      name
       createdAt
       updatedAt
     }
@@ -376,42 +556,9 @@ export const createTurn = /* GraphQL */ `
     $condition: ModelTurnConditionInput
   ) {
     createTurn(input: $input, condition: $condition) {
-      game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
-        id
-        name
-        players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      gameID
       id
-      playerID
-      player {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       score
-      content
+      word
       createdAt
       updatedAt
     }
@@ -423,42 +570,9 @@ export const updateTurn = /* GraphQL */ `
     $condition: ModelTurnConditionInput
   ) {
     updateTurn(input: $input, condition: $condition) {
-      game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
-        id
-        name
-        players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      gameID
       id
-      playerID
-      player {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       score
-      content
+      word
       createdAt
       updatedAt
     }
@@ -470,42 +584,9 @@ export const deleteTurn = /* GraphQL */ `
     $condition: ModelTurnConditionInput
   ) {
     deleteTurn(input: $input, condition: $condition) {
-      game {
-        gameWords {
-          gameID
-          id
-          playerID
-          createdAt
-          updatedAt
-        }
-        id
-        name
-        players {
-          id
-          title
-          createdAt
-          updatedAt
-        }
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      gameID
       id
-      playerID
-      player {
-        id
-        title
-        turns {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       score
-      content
+      word
       createdAt
       updatedAt
     }
