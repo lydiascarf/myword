@@ -1,8 +1,12 @@
-import React from 'react';
+import Amplify from 'aws-amplify';
 import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import awsconfig from './aws-exports';
 import { GamePage, JoinPage } from './components';
+
+Amplify.configure(awsconfig);
 
 function App() {
     return (

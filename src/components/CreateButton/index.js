@@ -1,18 +1,27 @@
-import React from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
+import { createGame } from '../../graphql/mutations';
 import './styles.css';
 
-const getUniqueID = () => {
-    const s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    return s4() + s4() + '-' + s4();
-};
-
 function CreateButton({ name }) {
+    const [gameID, setGameID] = useState();
+    const input = { name };
+    const makeGame = async (e) => {
+        if (!name) e.preventDefault();
+        try {
+            const x = await API.graphql(graphqlOperation(createGame, {input }));
+            console.log(x);
+            setGameID(x.id);
+        } catch(e) {
+            console.error('Error in create button\n', e);
+        }
+    };
     return (
-        <Link onClick={event => (!name) ? event.preventDefault() : null} to={`game?name=${name}&room=${getUniqueID()}`} >
+        <Link onClick={makeGame} to={`game?name=${name}&game=${gameID}`} >
             <Button size="lg" className="createButton">
                 Create
             </Button>
