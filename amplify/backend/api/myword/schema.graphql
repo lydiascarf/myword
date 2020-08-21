@@ -1,0 +1,37 @@
+type Game
+@auth(rules: [{ allow: private }])
+@model(queries: null)
+{
+  id: ID!
+  keyword: String!
+  players: [GamePlayer] @connection(name: "GamePlayer")
+}
+
+type GamePlayer
+@auth(rules: [{ allow: owner }])
+@model(queries: null, subscriptions: null)
+{
+  game: Game! @connection(name: "GamePlayer")
+  gameWord: String!
+  id: ID!
+  player: Player! @connection(name: "PlayerGame")
+  turns: [Turn] @connection
+}
+
+type Player
+@auth(rules: [{ allow: owner }])
+@model(queries: null, subscriptions: null)
+{
+  games: [GamePlayer] @connection(name: "PlayerGame")
+  id: ID!
+  name: String!
+}
+
+type Turn
+@auth(rules: [{ allow: owner, operations: [create]} ])
+@model
+{
+  id: ID!
+  score: Int
+  word: String!
+}

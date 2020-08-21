@@ -76,12 +76,6 @@ Int p: 0-based offset for guess' position (in characters)
 <img src="./images/beige-sheet-2.jpg" alt="Beige Sheet (used)" width="600"/>
 <img src="./images/handmade-sheet.jpg" alt="Handmade Sheet (used)" width="600"/>
 
-## Tech Stack
-
-React
-GraphQL
-AWS Amplify
-
 ## Contributors
 
 - [Nancy Alter](https://github.com/ngalter)
