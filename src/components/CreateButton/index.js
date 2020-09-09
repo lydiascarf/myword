@@ -7,15 +7,16 @@ import { Link } from 'react-router-dom';
 import { createGame } from '../../graphql/mutations';
 import './styles.css';
 
-function CreateButton({ name }) {
+function CreateButton({ name: keyword }) {
     const [gameID, setGameID] = useState();
-    const input = { name };
+    const input = { keyword };
     const makeGame = async (e) => {
-        if (!name) e.preventDefault();
+        if (!keyword) e.preventDefault();
         try {
-            const x = await API.graphql(graphqlOperation(createGame, {input }));
-            console.log(x);
-            setGameID(x.id);
+            const game = await API.graphql(graphqlOperation(createGame, { input }));
+            console.log(game);
+            setGameID(game.id);
+            console.log(gameID);
         } catch(e) {
             console.error('Error in create button\n', e);
         }

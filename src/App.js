@@ -1,4 +1,5 @@
 import Amplify from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -17,4 +18,4 @@ function App() {
     );
 }
 
-export default App;
+export default withAuthenticator(App);
