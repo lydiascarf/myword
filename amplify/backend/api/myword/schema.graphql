@@ -32,6 +32,7 @@ type Turn
 @model
 {
   id: ID!
+  order: Int!
   score: Int
   word: String!
 }
